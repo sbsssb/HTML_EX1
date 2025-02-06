@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .btn {
+            background-color : rgb(194, 192, 192);
+            color : black;
+            width: 100px;
+            padding : 20px;
+            font-size: 15px;
+            border : none;
+            cursor : pointer;
+            
+        }
+        .menu {
+            background-color: #f9f9f9;
+            width: 150px;
+            box-shadow: 1px 3px 8px 3px #e7e3e3;     
+            display: none;
+        }
+        .menu a {
+            display: block;
+            padding : 10px;
+        }
+        .top-menu {
+            display: inline-block;
+            position: relative;
+        }
+        
+        .top-menu:hover .menu {
+            display: block;
+        }
+      
+        .menu a {
+            cursor: pointer;
+        }
+        .menu a:hover {
+            background-color: rgb(204, 203, 203);
+        }
+
+
+        .top-menu2 {
+            display: inline-block;
+            position: absolute;
+        }
+        .top-menu2:hover .menu {
+            display: block;
+        }
+
+
+        .menu2 {
+            background-color: #f9f9f9;
+            width: 150px;
+            box-shadow: 1px 3px 8px 3px #e7e3e3;     
+            display: none;
+        }
+        .menu2 a {
+            display: block;
+            padding : 10px;
+        }
+
+        .top-menu2:hover .menu2 {
+            display: block;
+        }
+        .menu2 a {
+            cursor: pointer;
+        }
+        .menu2 a:hover {
+            background-color: rgb(204, 203, 203);
+        }
+
+        .all {
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class="top-menu">
+        <button class="btn">메뉴1</button>
+        <div class="menu">
+            <a>Menu 1</a>
+            <a>Menu 2</a>
+            <a>Menu 3</a>
+        </div>
+    </div>
+    <div class="top-menu2">
+        <button class="btn">메뉴2</button>
+        <div class="menu2">
+            <a>Menu 1</a>
+            <a>Menu 2</a>
+            <a>Menu 3</a>
+        </div>
+    </div>
+    
+</body>
+</html>
