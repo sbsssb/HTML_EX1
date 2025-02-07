@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <input type="button" value="버튼1"> -->
+     <input id="num1" placeholder="숫자 1">
+     <input id="num2" placeholder="숫자 2">
+    <button onclick="sum()">더하기</button>
+</body>
+</html>
+
+<script>
+    // js의 함수(메소드)는 리턴 타입 x, 파라미터 타입 x
+    // function sum(x, y) {
+    //     document.write(`<h2>${x} + ${y} = ${x+y}</h2>`);
+    //     // document.write(x + "+" + y + " =" + (x+y));
+    // }
+
+    // sum(10, 20);
+    // sum(20, 50);
+
+    function sum() {
+        // alert("sum 함수 호출");
+        // let obj1 = document.querySelector("#num1");
+        // let obj2 = document.querySelector("#num2");
+        // document.write(`<h2>${x} + ${y} = ${x+y}</h2>`);
+        // console.log(obj1.value + obj2.value);
+        // document.write(`<h2>${obj1.value} + ${obj2.value} = ${obj1.value+obj2.value}</h2>`);
+
+        let obj1 = parseInt(document.querySelector("#num1").value);
+        let obj2 = parseInt(document.querySelector("#num2").value);
+        document.write(`<h2>${obj1} + ${obj2} = ${obj1+obj2}</h2>`);
+    }
+</script>
