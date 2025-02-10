@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <input id="num1">
+     <input id="num2">
+    <button onclick="sum()">알림창</button>
+</body>
+</html>
+
+<script>
+
+    function sum() {
+
+        let obj1 = parseInt(document.querySelector("#num1").value);
+        let obj2 = parseInt(document.querySelector("#num2").value);
+        document.write(`<h2>${obj1} + ${obj2} = ${obj1+obj2}</h2>`);
+    }
+</script>

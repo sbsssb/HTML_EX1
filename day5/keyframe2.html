@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+            margin: 60px;
+            /* animation-name: slider; */
+            animation: rotate 3s infinite, test 2s 1 alternate;
+
+            /* animation-iteration-count: infinite; */
+            /* animation-direction: alternate; */
+        }
+
+        @keyframes rotate {
+            from {
+                background-color: aqua;
+                transform: perspective(200px) rotateX(0) rotateY(0);
+            }
+            50% {
+                background-color: blueviolet;
+                transform: perspective(200px) rotateX(180deg) rotateY(0deg);
+            }
+            to {
+                background-color: yellowgreen;
+                transform: perspective(200px) rotateX(180deg) rotateY(180deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>
