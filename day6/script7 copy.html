@@ -176,10 +176,11 @@
 
 	for(let i = 0; i < img.length; i++) {
 		img[i].onclick = function() {
-			let img1 = document.querySelector("#java");
-			let img2 = document.querySelector("#java").src;
-			img1.src = img[i].src;
-			img[i].src = img2;
+			//e.target.src;
+			//this.src;
+			let temp = this.src;
+			this.src =  java.src;
+			java.src = temp;
 		}		
 	}
 
