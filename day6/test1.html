@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span>숫자 입력</span>
+    <span><input id="num"></span><br>
+    <button onclick="fnAppend()">리스트 추가</button>
+    <ul id="list">
+    </ul>
+</body>
+</html>
+<script>
+    function fnAppend() {
+        let list = document.querySelector("#list");
+        let num = document.querySelector("#num").value;
+        let style = document.createAttribute("style");
+        style.value = "color: blue;"
+
+        let style2 = document.createAttribute("style");
+        style2.value = "color: black;"
+
+        let childNodes = list.childNodes;
+
+        list.innerHTML =""
+
+        for(let j = 1; j <= num; j++) {
+            let js = document.createElement("li");
+            js.innerText = j;
+           
+                if(j % 2 == 0) {
+                    js.style.color = "black";
+                    style2.value = "color: black;"
+                } else {
+                    js.style.color = "blue";
+                    style.value = "color: blue;"
+                }
+            
+            console.log(j);
+            list.appendChild(js);
+        }
+
+        // list.appendChild(js);
+       
+        // js.setAttributeNode(style);
+
+        // js.setAttributeNode(style2);
+
+    }
+</script>
