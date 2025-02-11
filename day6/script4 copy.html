@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* #imgb {
+            width: 400px;
+            height: 500px;
+            border: 1px solid #eee;
+        } */
+    </style>
+</head>
+<body>
+    <div><input type="radio" name="subject" value="java">java</div>
+    <div><input type="radio" name="subject" value="html">html</div>
+    <div><input type="radio" name="subject" value="oracle">oracle</div>
+    <div><input type="radio" name="subject" value="jquery">jquery</div>
+    <div></div><button onclick="fnSubject()">선택</button>
+    <div><img src="" style="width: 400px; height: 500px; display: none;" alt="이미지"></div>
+</body>
+</html>
+<script>
+    function fnSubject() {
+        let subject = document.querySelector("input[name='subject']:checked").value;
+        let img = document.querySelector("img");
+        img.style.display = "inline";
+        img.src = "../day4/image/" + subject + ".jpg";
+        
+        // if(subject == "java") {
+        //     img.src = "../day4/image/자바.jpg";
+        //     return;
+        // } else if(subject == "html") {
+        //     img.src = "../day4/image/html.jpg";
+        //     return;
+        // } else if(subject == "oracle") {
+        //     img.src = "../day4/image/오라클.jpg";
+        //     return;
+        // } else if(subject == "jquery") {
+        //     img.src = "../day4/image/제이쿼리.jpg";
+        //     return;
+        // } else {
+        //     alert("선택 안 함");
+        // }
+    }
+</script>

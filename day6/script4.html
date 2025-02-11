@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #imgb {
+            width: 400px;
+            height: 500px;
+            border: 1px solid #eee;
+        }
+    </style>
+</head>
+<body>
+    <input type="radio" name="subject" value="java">java
+    <input type="radio" name="subject" value="html">html
+    <input type="radio" name="subject" value="oracle">oracle
+    <input type="radio" name="subject" value="jquery">jquery
+    <button onclick="fnSubject()">선택</button>
+    <div><img id="imgb"></div>
+</body>
+</html>
+<script>
+    function fnSubject() {
+        let subject = document.querySelector("input[name='subject']:checked");
+        let img = document.querySelector("#imgb");
+
+        if(subject.value == "java") {
+            img.src = "../day4/image/자바.jpg";
+            return;
+        } else if(subject.value == "html") {
+            img.src = "../day4/image/html.jpg";
+            return;
+        } else if(subject.value == "oracle") {
+            img.src = "../day4/image/오라클.jpg";
+            return;
+        } else if(subject.value == "jquery") {
+            img.src = "../day4/image/제이쿼리.jpg";
+            return;
+        } else {
+            alert("선택 안 함");
+        }
+    }
+</script>

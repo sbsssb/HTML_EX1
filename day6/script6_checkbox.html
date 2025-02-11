@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 300px;
+            height: 400px;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div><input type="checkbox" name="subject" value="java">java</div>
+    <div><input type="checkbox" name="subject" value="html">html</div>
+    <div><input type="checkbox" name="subject" value="oracle">oracle</div>
+    <div><input type="checkbox" name="subject" value="jquery">jquery</div>
+    <div></div><button onclick="fnSubject()">선택</button>
+    <!-- <div><img src="" style="width: 400px; height: 500px;"></div> -->
+    <div id="imgb"></div>
+</body>
+</html>
+<script>
+    function fnSubject() {
+        let subject = document.querySelectorAll("input[name='subject']:checked");
+        let imgb = document.querySelector("#imgb");
+
+        imgb.innerHTML =""; //비우기
+
+        for(let i = 0; i < subject.length; i++) {
+            let img = document.createElement("img")
+            img.src = "../day4/image/" + subject[i].value + ".jpg";
+            imgb.appendChild(img);
+            
+        }
+        
+    }
+</script>
