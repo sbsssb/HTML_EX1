@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* label > span {
+            display: inline-block;
+            width: 120px;
+        } */
+    </style>
+</head>
+<body>
+    <div>
+        <table>
+            <tr>
+                <td><label>아이디:</label></td>
+                <td><input id="userId"></td>
+            </tr>
+            <tr>
+                <td><label>비밀번호: </label></td>
+                <td><input type="password" id="userPw"></td>
+            </tr>
+            <tr>
+                <td><label>비밀번호 확인: </label></td>
+                <td><input type="password" id="userPw2"></td>
+            </tr>
+            <tr>
+                <td><label>전화 번호:</label></td>
+                <td><input type="number" id="phone" placeholder="- 제외하고 입력해 주세요"></td>
+            </tr>
+            <tr>
+                <td><label>관심 언어: </label></td>
+                <td><label><input type="checkbox" id="" name="lan" value="java">자바</label>
+                    <label><input type="checkbox" id="" name="lan" value="oracle">오라클</label>
+                    <label><input type="checkbox" id="" name="lan" value="html">html</label>
+                    <label><input type="checkbox" id="" name="lan" value="python">python</label></td>
+            </tr>
+            <tr>
+                <td><label>성별:</label></td>
+                <td><label><input type="radio" id="userGd" name="gender" value="남자">남자</label>
+                    <label><input type="radio" id="userGd2" name="gender" value="여자">여자</label></td>
+            </tr>
+        </table>
+    </div>
+    <div>
+        <button onclick="fnJoin()">회원가입</button>
+    </div>
+</body>
+</html>
+
+<script>
+    //회원가입 클릭시
+    //비밀번호 2개 입력받아서 두 값이 다르면 비밀번호가 다르다고 출력
+    //비밀번호가 8글자 미만이면 8글자 이상이어야 한다고 출력
+
+    //radio 버튼으로 성별 선택
+    //아무것도 체크 안 된 상태로 회원가입 누를 시 성별을 선택해 주세요
+
+    function fnJoin(){
+        let userId = document.querySelector("#userId").value;
+
+        let userPw = document.querySelector("#userPw").value;
+        let userPw2 = document.querySelector("#userPw2").value;
+   
+
+        if(userId.length < 6) {
+            alert("아이디는 6글자 이상이어야 합니다.");
+            return;
+        } 
+
+        var pattern = /[`~!@#$%^&*|\\\'\";:\/?]/gi;
+        var pattern2 = /^[a-z0-9]$/;
+
+        if(pattern.test(userId)) {
+            alert("아이디는 특수문자가 사용 불가합니다.");
+            return;
+        }
+
+        if(!pattern2.test(userId)) {
+            alert("아이디는 소문자와 숫자만 입력해 주세요.");
+            return;
+        }
+        
+        if(userPw.length < 8) {
+            alert("비밀번호는 8글자 이상이어야 합니다.");
+            return;
+        } 
+        
+        if (userPw != userPw2) {
+            alert("비밀번호가 다릅니다.");
+            return;
+        } 
+
+        let phone = document.querySelector("#phone").value;
+        var phPattern = /^[0-9]{11,11}$/;
+         if(!phPattern.test(phone)) {
+            alert("(-) 제외 11자리 번호를 입력해 주세요.");
+        }
+
+        let lan = document.getElementsByName("lan");
+        let b = 0;
+        
+        for(let i = 0; i < lan.length; i++) {
+            
+            if(lan[i].checked) {
+                b++;
+            }
+
+            
+        }
+
+        if(b == 0) {
+            if(confirm("관심 언어를 선택하지 않았습니다. 그대로 진행하시겠습니까?") == true) {
+                lan = null;
+            } else {
+                return;
+            }
+        }
+
+        let list = document.getElementsByName("gender");
+
+        console.log(list);
+
+        if(!list[0].checked && !list[1].checked) {
+            alert("성별을 선택해 주세요.");
+            return;
+        }
+
+        alert("회원가입을 축하합니다.");
+
+        location.href = "main.html";
+        
+        
+    }
+
+
+</script>

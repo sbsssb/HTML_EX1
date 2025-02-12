@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Document</title>
+    <style>
+        div {
+            margin: auto;
+            text-align: center;
+            font-size: 50px;
+            font-weight: bold;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="time"></div>
+    <div><button onclick="fnClose()">닫기</button></div>
+</body>
+</html>
+<script>
+    setInterval(()=> {
+        let datetime = new Date();
+        let time = datetime.getHours() + ":" + datetime.getMinutes() + ":" + datetime.getSeconds();
+        let obj = document.querySelector("#time");
+        obj.innerHTML = time;
+    })
+
+    function fnClose() {
+        window.close();
+    }
+</script>

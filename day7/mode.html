@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=sunny" />
+    <title>Document</title>
+    <style>
+        .light_mode {
+            background-color: white;
+            color: black;
+        }
+        .dark-mode {
+            background-color: #222;
+            color: white;
+        }
+        /* .fontcolor {
+            color: white;
+        } */
+        .material-symbols-outlined {
+        font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+        }
+
+    </style>
+</head>
+<body class="light_mode">
+    <div>
+        <span class="material-symbols-outlined" onclick="fnMode()">
+            sunny
+        </span>
+    </div>
+    <div>
+        <ul>
+            <li>자바</li>
+            <li>자바스크립트</li>
+            <li>jquery</li>
+        </ul>
+    </div>
+</body>
+</html>
+
+<script>
+    function fnMode() {
+        let body = document.body;
+        body.classList.toggle('dark-mode');
+        body.classList.toggle('light-mode');
+    }
+</script>

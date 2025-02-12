@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    메인 페이지
+    <button onclick="fnPopup()">팝업</button>
+</body>
+</html>
+<script>
+    function fnPopup(){
+
+        let left = (screen.availWidth - 400) / 2;
+        let top = (screen.availHeight - 500) / 2;
+        window.open("time.html", 'time', `width=400, height=500, left=${left}, top=${top}`);
+    }
+    
+</script>

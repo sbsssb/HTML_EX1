@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .light_mode {
+            background-color: white;
+            color: black;
+        }
+        .dark-mode {
+            background-color: #222;
+            color: white;
+        }
+        .box {
+            position: absolute;
+            display: block;
+            margin: 100px;
+            margin-left: 500px;
+        }
+        button {
+            float: right;
+            position: relative;
+            width: 100px;
+            height: 4%;
+        }
+        .button-dark {
+            border: 1px solid white;
+            color: white;
+            background-color:transparent;
+        }
+        .button-light {
+            border: 1px solid black;
+            color: black;
+            background-color:transparent;
+        }
+
+    </style>
+</head>
+<body class="light_mode">
+    <div>
+        <button onclick="fnMode()" class="button-light">다크 모드</button>
+    </div>
+    <div class="box">
+        <h1>프로그래밍 재미있다</h1>
+        <ul>
+            <li>자바</li>
+            <li>자바스크립트</li>
+            <li>jquery</li>
+        </ul>
+    </div>
+</body>
+</html>
+
+<script>
+    function fnMode() {
+        let body = document.body;
+        body.classList.toggle('dark-mode');
+        body.classList.toggle('light-mode');
+
+        let button = document.button;
+        button.classList.toggle('button-dark');
+        button.classList.toggle('button-white');
+    }
+</script>
