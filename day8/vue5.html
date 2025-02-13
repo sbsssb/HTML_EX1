@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style>
+        table, tr, td, th {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 5px 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div>
+            <table>
+                <tr>
+                    <th>이름</th>
+                    <th>나이</th>
+                    <th>주소</th>
+                </tr>
+                <tr v-for="item in list">
+                    <td>{{item.name}}</td>
+                    <td>{{item.age}}</td>
+                    <td>{{item.addr}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    
+</body>
+</html>
+
+<script>
+    const app = Vue.createApp({
+        data() {
+            return {
+                list : [
+                    {name : "홍길동", age : 30, addr : "인천"},
+                    {name : "김철수", age : 17, addr : "서울"},
+                    {name : "박영희", age : 24, addr : "부산"},
+                    {name : "아무개", age : 35, addr : "제주도"}
+                ]
+            };
+        },
+        methods: {
+           
+        },
+        mounted() {
+
+        }
+    });
+
+    app.mount('#app');
+</script>

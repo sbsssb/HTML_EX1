@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>자바</li>
+        <li>오라클</li>
+        <li><span>html</span></li>
+        <li>jQuery</li>
+        <li>파이썬</li>
+    </ul>
+    <div>
+        <button id="btn" onclick="fnSelector()">클릭</button>
+    </div>
+</body>
+</html>
+
+<script>
+    function fnSelector() {
+        // $("li:has(span)").css("color", "red"); // span 태그만
+        // $("li:eq(2)").css("color", "red"); // 2번째 인덱스만
+        // $("li:gt(2)").css("color", "red"); // 2번째 인덱스 이후
+        // $("li:lt(2)").css("color", "red"); // 2번째 인덱스까지
+        // $("li:even").css("color", "red"); // 짝수 인덱스만
+        // $("li:first").css("color", "red"); // 첫 번째 인덱스만
+        $("li:last").css("color", "red"); // 마지막 인덱스만
+    }
+</script>

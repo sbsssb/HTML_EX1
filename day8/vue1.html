@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div v-if="name == ''">
+            <input v-model="inputName"></input>  <!-- 실시간으로 반영 가능 -->
+        </div>
+        <div v-else-if="name == '홍길동'">
+            {{name}}님은 개발자입니다.  
+        </div>
+        <div v-else>
+            <input v-model="inputName" disabled></input> <!-- 이름이 입력되면 입력 불가하게 -->
+        </div>
+        <div>{{name}}</div>
+        <button @click="fnName">클릭</button> <!-- 파라미터 보낼 게 없으면 () 생략 가능 -->
+    </div>
+    
+</body>
+</html>
+
+<script>
+    const app = Vue.createApp({
+        data() {
+            return {
+                // 변수
+                name: "",
+                age: "",
+                inputName : "" // 바로 반영
+            };
+        },
+        methods: {
+            // 함수(메소드)
+            fnName : function() { // 함수(key), 익명 함수(value)
+                let self = this;
+                self.name = self.inputName; // 바로 반영
+            }
+        },
+        mounted() {
+            // 처음 시작할 때 실행되는 부분
+            
+        }
+    });
+
+    app.mount('#app');
+</script>
