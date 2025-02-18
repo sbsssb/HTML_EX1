@@ -27,13 +27,14 @@
 </head>
 <body>
     <div id="app">
-        <table v-if="!viewflg">
+        <table v-if="!viewflg && !viewUp">
             <tr>
                 <th>아이디</th>
                 <th>이름</th>
                 <th>이메일</th>
                 <th>웹사이트</th>
                 <th>삭제</th>
+                <th>수정</th>
             </tr>
             <tr v-for="(item, index) in list">
                 <td>{{index+1}}</td>
@@ -46,6 +47,7 @@
                 </td>
                 <td>{{item.website}}</td>
                 <td><button @click="fnDelete(index)">삭제</button></td>
+                <td><button @click="fnUpdate(index)">수정</button></td>
             </tr>
         </table>
 
@@ -56,6 +58,13 @@
             <div>회사명: {{user.company.name}}</div>
             <div>주소: {{user.address.street}}</div>
             <button v-if="viewflg" @click="viewflg=!viewflg;">되돌아가기</button>
+        </div>
+        <div v-if="viewUp">
+            <div>이름: <input v-model="user.name"  disabled></div>
+            <div>이메일: <input v-model="user.email" ></div>
+            <div>회사명: <input v-model="user.company.name"></div>
+            <button @click="viewUp=!viewUp;">저장</button>
+            <button @click="viewUp=!viewUp;">되돌아가기</button>
         </div>
     </div>
 </body>
@@ -68,7 +77,8 @@
                 // 변수
                 list : [],
                 user : {},
-                viewflg : false
+                viewflg : false,
+                viewUp : false
             };
         },
         methods: {
@@ -104,6 +114,13 @@
                 }
                 
                 this.list.splice(index, 1);
+            },
+            fnUpdate: function(index) {
+                let self = this;
+                self.user = self.list[index];
+                self.viewflg = false;
+                self.viewUp = true;
+                
             }
         },
         mounted() {
